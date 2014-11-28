@@ -126,4 +126,16 @@ abstract class AbstractMigration
     Output::verbose($query);
     $this->db->query($query);
   }
+
+  public function getContent()
+  {
+    return array(
+      'up'       => $this->buildUp(),
+      'preUp'    => $this->buildPreup(),
+      'postUp'   => $this->buildPostup(),
+      'down'     => $this->buildDown(),
+      'preDown'  => $this->buildPredown(),
+      'postDown' => $this->buildPostdown(),
+    );
+  }
 }

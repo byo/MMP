@@ -18,4 +18,11 @@ abstract class AbstractSchema {
     }
   }
 
+  public function getContent()
+  {
+    return array(
+      'queries' => $this->buildQueries(),
+    );
+  }
+
 }
